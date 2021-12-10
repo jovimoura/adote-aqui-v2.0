@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="app">
+        <div id="box-header">
+            <header>
+                <div id="box-logo">
+                    <img src="" alt="logo">
+                    <h2>Adote Aqui!</h2>
+                </div>
+                <nav>
+                    <a>Home</a>
+                    <a>Adoção</a>
+                    <a>Contato</a>
+                </nav>
+            </header>
+        </div>
+        <div id="box-home">
+            <div>
+                <div class="text-container">
+                    <h2 class="subtitle">Por que adotar?</h2>
+                    <p class="text">
+                        Ao adotar, você ajuda a reduzir o número de cães e gatos
+                        abandonados. Os animais de rua já passaram por muito sofrimento
+                        e tudo o que precisam é de um lar para serem felizes de verdade!
+                    </p>
+                </div>
+                <div class="img-container">
+                    <img src="" alt="banner">
+                </div>
+            </div>
+        </div>
+        <div id="box-pets">
+            <div>
+                <ul v-for="pets in listaPets" :key="pets.id">
+                    <li>
+                        <img :src="pets.src" :alt="pets.alt">
+                        <button>{{ pets.name }}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>Orgulhosamente feito por <a href="https://github.com/jovimoura" class="github">João Victor Moura</a></footer>
+    </main>
+
+    <script type="module" src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+</body>
+</html>
