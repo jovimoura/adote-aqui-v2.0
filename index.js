@@ -1,4 +1,5 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js';
+// import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js';
+
 
 let app =  new Vue({
     el:'#app',
@@ -42,7 +43,21 @@ let app =  new Vue({
                     src:'./assets/pets/Gato3.jpg',
                     alt:'exemplo'
                 }
-            ]
+            ],
+            mostraModal:false,
+            name:null,
+            email:null,
+            phone:null
+        }
+    },
+    methods: {
+        callModal(){
+            this.mostraModal = !this.mostraModal;
+        },
+        cleanForm(){
+            this.name = '';
+            this.email = '';
+            this.phone = '';
         }
     },
 })

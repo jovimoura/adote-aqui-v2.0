@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--vuetify-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -41,16 +45,47 @@
                 <ul v-for="pets in listaPets" :key="pets.id">
                     <li>
                         <img :src="pets.src" :alt="pets.alt">
-                        <button>{{ pets.name }}</button>
+                        <button @click="callModal()">{{ pets.name }}</button>
                     </li>
                 </ul>
             </div>
         </div>
+        <div data-app>
+            <v-dialog v-model="mostraModal">
+                <v-card>
+                    <v-card-title class="text-h5 grey lighten-2">
+                        Formulário
+                    </v-card-title>
+                    <v-card-text>
+                        <div>
+                            <div>
+                                <div id="box-name">
+                                    <label for="name">Nome:</label>
+                                    <input type="text" id="name" placeholder="Digite o seu nome..." v-model="name">
+                                </div>
+                                <div id="box-phone">
+                                    <label for="phone">Telefone:</label>
+                                    <input type="text" id="phone" placeholder="(xx) xxxxx-xxxx" v-model="phone">
+                                </div>
+                                <div id="box-email">
+                                    <label for="email">E-mail:</label>
+                                    <input type="text" id="email" placeholder="Digite seu email" v-model="email">
+                                </div>
+                            </div>
+                        </div>
+                    </v-card-text>
+                    <v-divider></v-divider>
+                    <div id="box-btn">
+                        <button id="submit" @click="cleanForm()">Enviar</button>
+                    </div>
+                </v-card>
+            </v-dialog>
+        </div>
         <footer>Orgulhosamente feito por <a href="https://github.com/jovimoura" class="github">João Victor Moura</a></footer>
     </main>
 
-    <script type="module" src="./index.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-</body>
+    <script type="module" src="./index.js"></script>
 </html>
