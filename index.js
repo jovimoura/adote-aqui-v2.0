@@ -28,7 +28,7 @@ let app =  new Vue({
                 {
                     id:3,
                     name:'Pudim',
-                    src:'./assets/pets/Gato1.jpg',
+                    src:'./assets/pets/Gato1.jpeg',
                     alt:'exemplo'
                 },
                 {
@@ -58,6 +58,9 @@ let app =  new Vue({
             this.name = '';
             this.email = '';
             this.phone = '';
+        },
+        feedback(){
+            
         }
     },
 })
