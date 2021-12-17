@@ -26,6 +26,7 @@ h3 {
 }
 
 nav a {
+    text-decoration: none;
     margin: 0 .8rem;
 }
 
@@ -55,6 +56,19 @@ header {
     padding: .8rem 1rem;
     background-color: #000;
     width: 100%;
+}
+
+#info {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+#info h4 {
+    font-family: 'Pacifico', cursive;
+    color: #ffd60a;
+    font-size: 1.8rem;
+    margin-right: .5rem;
 }
 
 #box-logo {
@@ -93,6 +107,7 @@ header {
     border: 1px solid transparent;
     border-radius: 25px;
     margin: 2rem .5rem;
+    transition: ease-in-out .33s all;
 }
 
 #title-pets {
@@ -148,7 +163,7 @@ li {
     background-color: #fff;
 }
 
-#form-title {
+#form-title,#card-title {
     font-size: 2rem;
     font-family: 'Pacifico', cursive;
     color: #ffd60a;

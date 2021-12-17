@@ -21,11 +21,36 @@
                     <h1>Adote Aqui!</h1>
                 </div>
                 <nav>
-                    <a>Home</a>
-                    <a>Adoção</a>
-                    <a>Contato</a>
+                    <a href="#box-pets" @click="callAdocao()">Adoção</a>
+                    <a @click="callContato()">Contato</a>
                 </nav>
             </header>
+        </div>
+        <div id="box-card-contato" data-app>
+            <v-dialog  v-model="mostraContato">
+                <v-card id="card">
+                    <v-card-title id="card-title" class="text-h5 grey lighten-2">
+                        Contatos
+                    </v-card-title>
+                    <v-divider></v-divider>
+                    <v-card-text>
+                        <div>
+                            <div id="info">
+                                <h4>Email:</h4>
+                                <p>adote.aqui@gmail.com</p>
+                            </div>
+                            <div id="info">
+                                <h4>Telefone:</h4>
+                                <p>(21)3999-0000</p>
+                            </div>
+                            <div id="info">
+                                <h4>Endereço:</h4>
+                                <p>R. Imaginária 38</p>
+                            </div>
+                        </div>
+                    </v-card-text>
+                </v-card>
+            </v-dialog>
         </div>
         <div id="box-home">
             <div class="text-container">
@@ -40,7 +65,7 @@
                 <img src="./assets/img/criancacomcachorro.jpg" alt="banner" id="banner">
             </div>
         </div>
-        <div id="box-pets">
+        <div v-show="mostraAdocao" id="box-pets">
             <div id="title-pets">
                 <h3>Adote Aqui!</h3>
             </div>
@@ -89,7 +114,7 @@
             </v-dialog>
         </div>
         <footer>
-            Orgulhosamente feito por <a href="https://github.com/jovimoura" class="github" target="_blank">João Victor Moura</a>
+            Orgulhosamente feito por <a href="https://jovimoura.github.io/portfolio/" class="github" target="_blank">João Victor Moura</a>
             <img id="icon" src="./assets/img/pawpng.png" alt="icone">
         </footer>
     </main>
