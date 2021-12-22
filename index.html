@@ -91,21 +91,32 @@
                                 <div id="box-name">
                                     <label for="name">Nome:</label>
                                     <input type="text" id="name" placeholder="Digite o seu nome" v-model="name">
+                                    <div id="error">
+                                        <p class="erro" v-if="mensagemName">Por favor verifique se o campo nome está preenchido! </p>
+                                    </div>
                                 </div>
                                 <div id="box-phone">
                                     <label for="phone">Telefone:</label>
-                                    <input type="text" id="phone" placeholder="(xx) xxxxx-xxxx" v-model="phone">
+                                    <input maxlength="14" type="text" id="phone" placeholder="(xx) xxxxx-xxxx" v-model="phone"
+                                    @keypress="mascaraNumero">
+                                    <div id="error">
+                                        <p class="erro" v-if="mensagemPhone">Por favor verifique se o campo telefone está preenchido corretamente!</p>
+                                    </div>
                                 </div>
                                 <div id="box-email">
                                     <label for="email">E-mail:</label>
                                     <input type="text" id="email" placeholder="Digite seu email" v-model="email">
+                                    <div id="error">
+                                        <p class="erro" v-if="mensagemEmail ">Por favor verifique se o campo email está preenchido corretamente!</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </v-card-text>
                     <v-divider></v-divider>
                     <div id="box-btn">
-                        <button id="submit" @click="cleanForm()">Enviar</button>
+                        <p class="feedback" v-if="feedback">Formulário enviado com sucesso!</p>
+                        <button id="submit" @click="testeForm()">Enviar</button>
                     </div>
                     <div id="box-message">
                         

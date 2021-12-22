@@ -202,6 +202,18 @@ input::placeholder {
 #box-btn {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+.feedback {
+    color: #004085;
+    background-color: #cce5ff;
+    border: 2px solid #b8daff;
+    border-radius: 5px;
+    margin: auto;
+    max-width: 20rem;
+    padding: .5rem .8rem;
+    font-size: 1rem;
 }
 
 #submit {

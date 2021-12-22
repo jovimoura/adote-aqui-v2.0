@@ -46,9 +46,13 @@ let app = new Vue({
       mostraModal: false,
       mostraAdocao: false,
       mostraContato: false,
-      name: null,
-      email: null,
-      phone: null,
+      name: '',
+      email: '',
+      phone: '',
+      feedback: false,
+      mensagemName: false,
+      mensagemPhone: false,
+      mensagemEmail: false
     };
   },
   methods: {
@@ -61,11 +65,54 @@ let app = new Vue({
     callContato() {
       this.mostraContato = !this.mostraContato
     },
-    cleanForm() {
+    /**
+             * Validação de numero
+             * @param {*} phone
+             * @returns {(object)}
+             */
+    mascaraNumero(phone) {
+      // Função que cria a máscara para o número de telefone
+      if (this.phone.length == 1) {
+          const digit = this.phone
+          this.phone = `(${digit}`
+      } else if (this.phone.length === 3) {
+          this.phone += ') '
+      } else if (this.phone.length === 9) {
+          this.phone += '-'
+      }
+    },
+    testeForm() {
+      //validação de numero
+      const validaNumero = /^\([0-9]{2}\) [0-9]{4}-[0-9]{4}$/
+      //validação de email
+      const validaEmail = /\S+@\S+\.\S+/
+      if(this.name === '') {
+        this.mensagemName = !this.mensagemName
+      }
+      if(!validaEmail.test(this.email)) {
+        this.mensagemEmail = !this.mensagemEmail
+      }
+      if(!validaNumero.test(this.phone)) {
+        this.mensagemPhone = !this.mensagemPhone
+      }
+      if((this.name != '') && (validaEmail.test(this.email)) && (validaNumero.test(this.phone))) {
+        this.resetaErros()
+        this.resetaDados()
+        this.feedback = !this.feedback
+        setTimeout(() => {
+          this.feedback = !this.feedback
+        }, 2500);
+      }
+    },
+    resetaErros () {
+      this.mensagemName = false
+      this.mensagemPhone = false
+      this.mensagemEmail = false
+    },
+    resetaDados () {
       this.name = "";
       this.email = "";
       this.phone = "";
-    },
-    feedback() {},
+    }
   },
 });
