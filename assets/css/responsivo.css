@@ -1,0 +1,37 @@
+@media (max-width:768px) {
+    header {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h1, h2, a, p {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 2rem
+    }
+    
+    #card-title, #info h4 {
+        font-size: 1.2rem;
+    } 
+
+    nav a {
+        margin: 0;
+    }
+
+    #box-home {
+        flex-direction: column;
+    }
+
+    .text-container {
+        width: auto;
+    }
+
+    #banner {
+        margin-top: 1rem;
+        width: 15rem;
+        height: 10rem;
+    }
+}
