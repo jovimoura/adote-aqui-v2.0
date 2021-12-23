@@ -5,16 +5,13 @@ Este projeto trata-se de um reboot de um antigo código meu que era bem mais sim
 ## Confira o projeto on-line:😉
 
 ```
+https://jovimoura.github.io/adote-aqui-v2.0/
 ```
 
-## Caso você queira analisar o projeto em sua maquina, siga esses passo a passo: 😁
-
-<br>
-
-### Clone o repositório😎
+## Caso você queira analisar o projeto em sua maquina, clone o repositório😎
 
 ```
-git clone 
+git clone https://github.com/jovimoura/adote-aqui-v2.0
 ```
 
 
